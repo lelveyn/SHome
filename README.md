@@ -9,7 +9,7 @@ $ npm i
 $ ionic start
 ```
 
-# Instal Ionic 
+# Install Ionic 
 ```
 $ npm install -g @ionic/cli
 $ npm i
