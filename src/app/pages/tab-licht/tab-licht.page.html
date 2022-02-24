@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-img class="pfeil-links" src="./../../assets/icons/pfeil-links.png" [routerLink]="['/tabs/home']"></ion-img>
+  <ion-title style="display: inline-block;" class="font-text title">{{ title }}</ion-title>
+  <div style="width: 40%; display: inline-block; float: right;">
+    <ion-button color="success" size="small" (click)="allAn()">Alles ANschalten</ion-button><br />
+    <ion-button color="danger" size="small" (click)="allAus()">Alles AUSschalten</ion-button>
+  </div>
+
+  <ion-list style="margin-top: 20px;">
+    <ng-container *ngFor="let zim of zimmer; let indexZim = index;">
+      <ng-container *ngFor="let licht of zim.lichtArray; let indexLicht = index;">
+        <div class="block">
+          <ion-label class="list-label">{{zim.name}} - {{licht.name}}</ion-label><br />
+          <p class="font-text licht-value" *ngIf="licht.value">On</p>
+          <p class="font-text licht-value" *ngIf="!licht.value">Off</p>
+          <p class="font-text licht-hell">Helligkeit: {{licht.hell}}%</p><br />
+          <ion-toggle [(ngModel)]="licht.value" (ionChange)="lichtToggle(indexZim, indexLicht, $event)"></ion-toggle>
+          <ion-range pin="true" [(ngModel)]="licht.hell" (ionChange)="lichtRange(indexZim, indexLicht, $event)"
+            [disabled]="!licht.value"></ion-range>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,25 @@
+.title {
+  font-weight: bold !important;
+  font-size: 20px !important;
+  line-height: 23px !important;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 11px;
+  left: 55px;
+}
+
+.temp {
+  height: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+}
+
+.text {
+  display: inline-block;
+  float: right;
+  font-size: 20px !important;
+  margin: 0px;
+  margin-right: 5px;
+}

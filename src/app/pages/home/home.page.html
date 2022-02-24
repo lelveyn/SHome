@@ -1,0 +1,15 @@
+<ion-content>
+  <ng-container *ngFor="let zim of zimmer">
+    <div class="zimmer" [routerLink]="['/tabs/zimmer', zim.name]">
+      <ion-img class="zim-img" [src]="zim.img"></ion-img>
+      <p class="font-text zim-label">{{zim.name}}</p>
+      <ion-img class="zim-img-temp" src="./../../assets/icons/temp.png"></ion-img>
+      <p class="font-text font-text-home zim-temp">{{zim.temp}}°C</p>
+      <ion-img class="zim-img-feuchte" src="./../../assets/icons/feuchte.png"></ion-img>
+      <p class="font-text font-text-home zim-feuchte">{{zim.feuchte}}%</p>
+      <ion-img class="zim-img-licht" src="./../../assets/icons/licht.png"></ion-img>
+      <p class="font-text font-text-home zim-licht" style="color: red;" *ngIf="zim.licht">On</p>
+      <p class="font-text font-text-home zim-licht" style="color: green;" *ngIf="!zim.licht">Off</p>
+    </div>
+  </ng-container>
+</ion-content>

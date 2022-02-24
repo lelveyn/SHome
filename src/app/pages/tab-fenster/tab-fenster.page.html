@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-img class="pfeil-links" src="./../../assets/icons/pfeil-links.png" [routerLink]="['/tabs/home']"></ion-img>
+  <ion-title style="display: inline-block;" class="font-text title">{{ title }}</ion-title>
+  <div style="width: 30%; display: inline-block; float: right;">
+    <ion-button color="success" size="small" (click)="allHoch()">Alles Hoch</ion-button><br />
+    <ion-button color="danger" size="small" (click)="allRunter()">Alles Runter</ion-button>
+  </div>
+
+  <ion-list style="margin-top: 20px;">
+    <ng-container *ngFor="let zim of zimmer">
+      <div class="block">
+        <ion-label class="list-label">{{zim.name}} - Rollade</ion-label><br />
+        <p class="font-text rollade-value" *ngIf="zim.rollade.value">Offen</p>
+        <p class="font-text rollade-value" *ngIf="!zim.rollade.value">Zu</p>
+        <p class="font-text rollade-hell">Höhe: {{zim.rollade.hoehe}}%</p><br />
+        <ion-toggle [(ngModel)]="zim.rollade.value" (ionChange)="rolladeToggle(zim, $event)"></ion-toggle>
+        <ion-range pin="true" [(ngModel)]="zim.rollade.hoehe" (ionChange)="rolladeRange(zim, $event)"
+          [disabled]="!zim.rollade.value"></ion-range>
+      </div>
+    </ng-container>
+  </ion-list>
+
+</ion-content>

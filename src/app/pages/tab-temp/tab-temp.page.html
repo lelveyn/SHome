@@ -1,0 +1,29 @@
+<ion-content>
+
+  <ion-img class="pfeil-links" src="./../../assets/icons/pfeil-links.png" [routerLink]="['/tabs/home']"></ion-img>
+  <ion-title class="font-text title">{{ title }}</ion-title>
+
+  <ion-segment (ionChange)="segmentChanged($event)" value="tag">
+    <ion-segment-button value="tag">
+      <ion-label>Tag</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="woche">
+      <ion-label>Woche</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <div class="block" style="height: 250px;" *ngFor="let zim of zimmer">
+      <p class="font-text list-label">{{ zim.name }}</p>
+      <p class="font-text text">{{zim.temp}}°C</p>
+      <ion-img class="temp" src="./../../assets/icons/temp.png"></ion-img>
+
+      <canvas baseChart width="400" [datasets]="[ { data: zim.tempArray, label: 'Temperatur' } ]"
+        [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+        [chartType]="lineChartType"></canvas>
+    </div>
+  </ion-list>
+
+
+
+</ion-content>

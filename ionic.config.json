@@ -1,0 +1,7 @@
+{
+  "name": "SHome",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

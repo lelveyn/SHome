@@ -1,0 +1,37 @@
+<ion-content>
+
+  <ion-img class="pfeil-links" src="./../../assets/icons/pfeil-links.png" [routerLink]="['/tabs/home']"></ion-img>
+  <ion-title class="font-text title">{{ title }}</ion-title>
+  <ion-list>
+    <ng-container *ngFor="let zim of zimmer; let indexZim = index;">
+      <ng-container *ngFor="let pflanze of zim.pflanzeArray; let indexPflanze = index;">
+        <div class="block">
+          <ion-label class="list-label">{{zim.name}} - {{pflanze.name}}</ion-label><br />
+          <ion-img style="width: 40px; display: inline-block; margin-left: 20px;"
+            src="./../../assets/icons/feuchte.png"></ion-img>
+          <div style="display: inline-block; margin-left: 20px;">
+            <p class="font-text pflanze-text">Erde Feuchtigkeit:</p>
+            <p class="font-text pflanze-text">Wasser Tank:</p>
+          </div>
+          <div style="display: inline-block; margin-left: 20px;">
+            <p class="font-text pflanze-text">{{pflanze.erde}}%</p>
+            <p class="font-text pflanze-text">{{pflanze.tank}}%</p>
+          </div>
+          <ion-img style="width: 40px; display: inline-block; float: right; margin-right: 20px;"
+            src="./../../assets/icons/setting.png" (click)="setting($event)"></ion-img>
+          <div style="display: none; border-top: 1px solid #fff; position: relative;">
+            <p class="font-text pflanze-text" style=" margin-left: 10px; margin-top: 10px;">Feuchtigkeitgrenze:
+              {{pflanze.grenze}}%</p>
+            <p class="font-text pflanze-text" style=" margin-left: 10px;">Wasser Tank Meldung</p>
+            <ion-range class="range" pin="true" [(ngModel)]="pflanze.grenze"
+              (ionChange)="grenzeRange(indexZim, indexPflanze, $event)"></ion-range>
+            <ion-range class="range" style="top: 35px;" pin="true" [(ngModel)]="pflanze.meldung"
+              (ionChange)="meldungRange(indexZim, indexPflanze, $event)"></ion-range>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ion-list>
+
+
+</ion-content>

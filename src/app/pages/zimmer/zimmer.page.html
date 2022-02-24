@@ -1,0 +1,63 @@
+<ion-content>
+
+  <ion-title class="font-text title">{{ title }}</ion-title>
+
+  <ion-img class="pfeil-links" src="./../../assets/icons/pfeil-links.png" [routerLink]="['/tabs/home']"></ion-img>
+  <ion-img class="icon" [src]="icon"></ion-img>
+  <ion-img class="pfeil-rechts" src="./../../assets/icons/pfeil-rechts.png" [routerLink]="['/tabs/zimmer', nextZimmer]">
+  </ion-img>
+
+  <div class="zim-daten">
+    <ion-img class="temp-icon" src="./../../assets/icons/temp.png"></ion-img>
+    <p class="temp-value">Temperatur: {{temp}}°C</p>
+    <ion-img class="feuchte-icon" src="./../../assets/icons/feuchte.png"></ion-img>
+    <p class="feuchte-value">Feuchtigkeit: {{feuchte}}%</p>
+  </div>
+
+  <ion-list>
+    <div class="block" *ngFor="let licht of lichtArray">
+      <ion-img style="width: 15px; display: inline-block; margin-left: 15px;" src="./../../assets/icons/licht.png">
+      </ion-img>
+      <ion-label class="font-text list-label">{{licht.name}}</ion-label><br />
+      <p class="font-text licht-value" *ngIf="licht.value">On</p>
+      <p class="font-text licht-value" *ngIf="!licht.value">Off</p>
+      <p class="font-text licht-hell">Helligkeit: {{licht.hell}}%</p><br />
+      <ion-toggle [(ngModel)]="licht.value" (ionChange)="lichtToggle(licht, $event)"></ion-toggle>
+      <ion-range pin="true" [(ngModel)]="licht.hell" (ionChange)="lichtRange(licht, $event)" [disabled]="!licht.value">
+      </ion-range>
+    </div>
+  </ion-list>
+
+  <ion-list>
+    <div class="block">
+      <ion-img style="width: 15px; display: inline-block; margin-left: 15px;" src="./../../assets/icons/rollade.png">
+      </ion-img>
+      <ion-label class="font-text list-label">Rollade</ion-label><br />
+      <p class="font-text licht-value" *ngIf="rollade.value">Offen</p>
+      <p class="font-text licht-value" *ngIf="!rollade.value">Zu</p>
+      <p class="font-text licht-hell">Höhe: {{rollade.hoehe}}%</p><br />
+      <ion-toggle [(ngModel)]="rollade.value" (ionChange)="rolladeToggle($event)"></ion-toggle>
+      <ion-range pin="true" [(ngModel)]="rollade.hoehe" (ionChange)="rolladeRange($event)" [disabled]="!rollade.value">
+      </ion-range>
+    </div>
+  </ion-list>
+
+  <ion-list>
+    <div class="block" *ngFor="let pflanze of pflanzeArray">
+      <ion-img style="width: 15px; display: inline-block; margin-left: 15px;" src="./../../assets/icons/pflanze.png">
+      </ion-img>
+      <ion-label class="font-text list-label">{{pflanze.name}}</ion-label><br />
+      <ion-img style="width: 40px; display: inline-block; margin-left: 20px;" src="./../../assets/icons/feuchte.png">
+      </ion-img>
+      <div style="display: inline-block; margin-left: 20px;">
+        <p class="font-text pflanze-text">Erde Feuchtigkeit:</p>
+        <p class="font-text pflanze-text">Wasser Tank:</p>
+      </div>
+      <div style="display: inline-block; margin-left: 20px;">
+        <p class="font-text pflanze-text">{{pflanze.erde}}%</p>
+        <p class="font-text pflanze-text">{{pflanze.tank}}%</p>
+      </div>
+    </div>
+  </ion-list>
+
+</ion-content>
