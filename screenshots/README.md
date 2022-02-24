@@ -1,21 +1,11 @@
-# SHome
+# SHome screenshots
 
-Home control Application
+### Home
+[[https://github.com/lelveyn/SHome/blob/main/screenshots/home.PNG|alt=octocat]]
 
-## Start the Aplication
+### Zimmer
+[[https://github.com/lelveyn/SHome/blob/main/screenshots/zimmer.PNG|alt=octocat]]
 
-```
-$ npm i
-$ ionic start
-```
+### Pflanze
 
-# Instal Ionic 
-```
-$ npm install -g @ionic/cli
-$ npm i
-```
-#### If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
-```
-$ npm uninstall -g ionic
-$ npm install -g @ionic/cli
-```
+[[https://github.com/lelveyn/SHome/blob/main/screenshots/pflanze.PNG|alt=octocat]]

@@ -1,5 +1,4 @@
 # SHome
-<<<<<<< HEAD
 
 Home control Application
 
@@ -20,6 +19,4 @@ $ npm i
 $ npm uninstall -g ionic
 $ npm install -g @ionic/cli
 ```
-=======
-Home control Application
->>>>>>> 00ee4801e5e66a23d31a224100624ed722b58008
+
