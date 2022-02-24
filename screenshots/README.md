@@ -1,11 +1,11 @@
 # SHome screenshots
 
 ### Home
-![alt text] (https://github.com/lelveyn/SHome/blob/main/screenshots/home.PNG?raw=true)
+![Home] (https://github.com/lelveyn/SHome/raw/main/screenshots/home.PNG)
 
 ### Zimmer
-![alt text] (https://github.com/lelveyn/SHome/blob/main/screenshots/zimmer.PNG?raw=true)
+![Zimmer] (https://github.com/lelveyn/SHome/raw/main/screenshots/zimmer.PNG)
 
 ### Pflanze
 
-![alt text] (https://github.com/lelveyn/SHome/blob/main/screenshots/pflanze.PNG?raw=true)
+![Pflanze] (https://github.com/lelveyn/SHome/raw/main/screenshots/pflanze.PNG)
