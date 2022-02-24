@@ -1,2 +1,2 @@
 # SHome
-Home Kontroll
+Home control Application
